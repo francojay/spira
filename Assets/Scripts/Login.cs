@@ -20,7 +20,7 @@ public class Login : MonoBehaviour {
 
     IEnumerator AuthUser()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("http://localhost:3000/api/v1/users"))
+        using (UnityWebRequest www = UnityWebRequest.Get("https://sheltered-castle-75234.herokuapp.com/api/v1/users/"))
         {
             yield return www.SendWebRequest();
 
