@@ -6,6 +6,9 @@ using System;
 using System.Text.RegularExpressions;
 
 public class Login : MonoBehaviour {
+    // LOCAL : 'http://localhost:3000/api/v1'
+    // CLOUD : 'https://sheltered-castle-75234.herokuapp.com/api/v1'
+    private string url = "http://localhost:3000/api/v1";
 	public GameObject username;
 	public GameObject password;
 	private string Username;
@@ -20,7 +23,10 @@ public class Login : MonoBehaviour {
 
     IEnumerator AuthUser()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("https://sheltered-castle-75234.herokuapp.com/api/v1/users/"))
+        WWWForm form = new WWWForm();
+        form.AddField("username", Username);
+        form.AddField("password", Password);
+        using (UnityWebRequest www = UnityWebRequest.Post(url + "/auth/authUser", form))
         {
             yield return www.SendWebRequest();
 
