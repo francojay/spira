@@ -6,7 +6,7 @@ using System;
 using System.Text.RegularExpressions;
 
 public class Login : MonoBehaviour {
-    // LOCAL : 'http://localhost:3000/api/v1'
+    // LOCAL : 'http://localhost:3000/api/v1 '
     // CLOUD : 'https://sheltered-castle-75234.herokuapp.com/api/v1'
     private string url = "http://localhost:3000/api/v1";
 	public GameObject username;
